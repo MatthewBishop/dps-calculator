@@ -24,10 +24,6 @@ jobs:
       - name: Upload Coverage
         uses: codecov/codecov-action@a2d3766e6042439a2b570118c95505d1de223b66
       - name: Build JAR
-        run: gradle dpsCalc
-      - name: Publish JAR
-        uses: actions/publish-artifact@v1
-        with:
-          name: dps-calculator-2.3.2.jar
-          path: build/libs/dps-calculator-2.3.2.jar
-          repo: MatthewBishop/dps-calculator
+        run: ./gradlew dpsCalc
+      - name: Publish to GitHub Packages
+        run: ./gradlew publish

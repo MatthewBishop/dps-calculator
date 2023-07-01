@@ -3,6 +3,21 @@ plugins {
     id 'idea'
     id 'checkstyle'
     id 'jacoco'
+    id 'maven-publish'
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/MatthewBishop/dps-calculator")
+        }
+    }
 }
 
 idea {
