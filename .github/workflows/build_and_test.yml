@@ -23,3 +23,10 @@ jobs:
           arguments: build
       - name: Upload Coverage
         uses: codecov/codecov-action@a2d3766e6042439a2b570118c95505d1de223b66
+      - name: Build JAR
+        run: gradle dpsCalc
+      - name: Publish JAR
+        uses: actions/upload-artifact@v2
+        with:
+          path: build/libs/dps-calculator-2.3.2.jar
+          name: dps-calculator-2.3.2.jar
