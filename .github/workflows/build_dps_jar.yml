@@ -1,0 +1,17 @@
+name: Build and publish JAR
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build JAR
+        run: gradle dpsCalc
+      - name: Publish JAR
+        uses: actions/upload-artifact@v2
+        with:
+          path: build/libs/dps-calc-1.0.jar
+          name: dps-calc-1.0.jar
