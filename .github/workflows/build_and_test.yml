@@ -26,7 +26,8 @@ jobs:
       - name: Build JAR
         run: gradle dpsCalc
       - name: Publish JAR
-        uses: actions/upload-artifact@v2
+        uses: actions/publish-artifact@v1
         with:
-          path: build/libs/dps-calculator-2.3.2.jar
           name: dps-calculator-2.3.2.jar
+          path: build/libs/dps-calculator-2.3.2.jar
+          repo: MatthewBishop/dps-calculator
