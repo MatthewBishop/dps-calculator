@@ -81,7 +81,7 @@ jacocoTestReport {
     }
 }
 
-task myJar(type: Jar) {
+task dpsCalc(type: Jar) {
     from('src/main/java/com/duckblade/osrs/dpscalc/calc') {
         include '**'
     }
